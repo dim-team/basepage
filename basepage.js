@@ -130,11 +130,9 @@ BasePage.prototype = {
         this.invoke('preunload');
         var _this = this;
         if (this.cachable && this.dom) {
-            //this.dom.hide();
-            console.log('pagecache-' + encodeURIComponent(this.url));
             sessionStorage['pagecache-' + encodeURIComponent(this.url)] = this.dom.html();
         }
-        //} else {
+
         if (this.dom) {
             this.dom.remove();
             this.dom = null;
@@ -147,10 +145,10 @@ BasePage.prototype = {
         });
         scroller.unload(this.id);
         setTimeout(function () {
-            tploader.removeStyle(_this.styles);
+            //tploader.removeStyle(_this.styles);
             _this.styles = [];
         }, 100);
-        //}
+
         this.invoke('unload');
         sessionStorage['scrolltop-' + encodeURIComponent(this.url)] = this.scrollTop;
     },
