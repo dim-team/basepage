@@ -108,7 +108,7 @@ BasePage.prototype = {
         var elmId = this.type + '_' + this.id,
             content = tpl(data),
             _this = this;
-        this.container.append('<div class="spa-' + this.type + '" id="' + elmId + '"></div>');
+        this.container.html('<div class="spa-' + this.type + '" id="' + elmId + '"></div>');
         this.dom = $('#' + elmId);
         document.documentElement.id = 'document_'+this.id;
         document.documentElement.dataset.page = this.id;
